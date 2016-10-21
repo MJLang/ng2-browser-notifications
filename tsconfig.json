@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "noEmitHelpers": true,
+    "pretty": true,
+    "sourceMap": true,
+    "lib": ["es5", "dom"],
+    "strictNullChecks": false,
+    "baseUrl": "./src",
+    "paths": {},
+    "types": [
+      "core-js",
+      "node"
+    ]
+  },
+  "exclude": [
+    "example/**/*",
+    "node_modules"
+  ]
+}
