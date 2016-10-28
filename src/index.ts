@@ -10,3 +10,4 @@ import { BrowserNotification } from './browser-notification.service';
 export class BrowserNotificationModule { }
 
 export * from './browser-notification.service';
+export { Browser } from './detect-browser';

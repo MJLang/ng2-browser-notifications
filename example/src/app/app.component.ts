@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { BrowserNotification } from './../../../src';
+import { BrowserNotification, Browser } from './../../../src';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -7,6 +7,8 @@ import { BrowserNotification } from './../../../src';
 })
 export class AppComponent {
   constructor(private notification: BrowserNotification) {
+    let browserType = this.notification.getBrowserType();
+    console.log(Browser[browserType]);
   }
   title = 'app works!';
 }

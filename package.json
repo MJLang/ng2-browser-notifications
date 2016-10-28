@@ -4,7 +4,7 @@
   "description": "Module to make use of the browser push notifications",
   "main": "index.js",
   "scripts": {
-    "test": "ng test"
+    "start": "cd example && ng serve"
   },
   "keywords": [
     "angular2",
@@ -16,12 +16,11 @@
   ],
   "author": "Martin Lang <martin@mercator.io>",
   "license": "MIT",
-  "peerDependencies": {
-    "@angular/core": "^2.1.1"
-  },
-  "devDependencies": {
+  "dependencies": {
+    "@types/core-js": "^0.9.34",
     "rxjs": "5.0.0-beta.12",
     "zone.js": "0.6.21",
+    "core-js": "^2.4.1",
     "@angular/core": "2.1.1",    
     "@angular/common": "2.1.1",
     "@angular/http": "2.1.1",
