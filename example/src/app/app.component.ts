@@ -7,8 +7,11 @@ import { BrowserNotification, Browser } from './../../../src';
 })
 export class AppComponent {
   constructor(private notification: BrowserNotification) {
-    let browserType = this.notification.getBrowserType();
-    console.log(Browser[browserType]);
+
   }
   title = 'app works!';
+
+  public sendNotification() {
+    this.notification.displayNotification('Hello there!');
+  }
 }

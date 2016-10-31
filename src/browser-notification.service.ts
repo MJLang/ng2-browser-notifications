@@ -1,37 +1,26 @@
 import { Injectable } from '@angular/core';
-import { getBrowserVendor } from './detect-browser';
 import { Observable } from 'rxjs/Observable';
+import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import 'rxjs/add/observable/fromPromise';
+import { NotificationPermission } from './notification-permission';
+
 @Injectable()
 export class BrowserNotification {
+  private notificationsAvailable: boolean;
 
+  public permission: BehaviorSubject<NotificationPermission> = new BehaviorSubject<NotificationPermission>(null);
   constructor() { 
-    if (!('Notification' in window)) {
-      console.log('nah');
-      return;
-    } else {
-      this.askPermission().subscribe((result) => {
-        console.log(result);
-      });
-    }
+    this.notificationsAvailable = !!('Notification' in window);
+    // Dont bother setting up if the browser does not support notifications
+    if (!this.notificationsAvailable) return;
+    
   }
 
   public askPermission() {
-    Observable.bind
     return Observable.fromPromise(Notification.requestPermission());
   }
 
-  public getBrowserType() {
-    return getBrowserVendor();
-  }
-
-
-
-  public canNotify(): boolean {
-    let browser = getBrowserVendor();
-
-
-    
-    return false;
+  public displayNotification(message: string) {
+    let notification: Notification = new Notification(message);
   }
 }
