@@ -34,7 +34,7 @@ export class BrowserNotification {
     });
   }
 
-  public displayNotification(title: string, body?: string): Observable<Notification> {
+  public displayNotification(title: string, body?: string, options?: NotificationOptions): Observable<Notification> {
     if (!this.notificationsAvailable) return Observable.throw(new Error('Browser does not support Notifications'));
     let notificationOptions: NotificationOptions = {body};
     return Observable.from([new Notification(title, notificationOptions)]);

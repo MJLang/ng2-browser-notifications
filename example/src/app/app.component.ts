@@ -7,19 +7,23 @@ import { BrowserNotification, Browser } from './../../../src';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  public messageText: FormControl;
+  public messageTitle: FormControl;
+  public messageBody: FormControl;
   constructor(private notification: BrowserNotification) {
 
   }
   title = 'app works!';
 
   ngOnInit() {
-    this.messageText = new FormControl();
-    this.messageText.setValue('Hello World');
+    this.messageTitle = new FormControl();
+    this.messageTitle.setValue('Hello World');
+
+    this.messageBody = new FormControl();
+    this.messageBody.setValue('Test Body');
   }
 
   public sendNotification() {
-    this.notification.displayNotification(this.messageText.value).subscribe((message) => {
+    this.notification.displayNotification(this.messageTitle.value, this.messageBody.value).subscribe((message) => {
       console.log(message);
     });
   }

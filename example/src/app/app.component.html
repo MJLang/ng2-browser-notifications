@@ -2,6 +2,7 @@
   {{title}}
 </h1>
 
-<input [formControl]='messageText' type='text'>
+<input [formControl]='messageTitle' type='text'>
 <br/>
+<input [formControl]='messageBody' type='text'>
 <button (click)='sendNotification()'>Send Notification</button>
