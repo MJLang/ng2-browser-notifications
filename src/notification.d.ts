@@ -40,3 +40,4 @@ declare var Notification: {
     requestPermission(): Promise<string>;
 
 }
+
